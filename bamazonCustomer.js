@@ -31,6 +31,7 @@ function welcomePage() {
       displayMerch();
     } else {
       console.log("Thank you! Come back soon!");
+      connection.end();
     }
   });
 }
@@ -54,7 +55,6 @@ function displayMerch() {
     wantToBuy();
   });
 }
-
 //function prompting if you want to buy a product
 function wantToBuy() {
   inquirer.prompt([{
@@ -66,7 +66,26 @@ function wantToBuy() {
 
   }]).then(function (user) {
     if (user.purchase === true) {
+      
       purchasePrompt();
+    } else {
+      console.log("Thank you! Come back soon!");
+      connection.end();
+    }
+  });
+}
+//function to ask if user wants to purchase another item!
+function another() {
+  inquirer.prompt([{
+
+    type: "confirm",
+    name: "purchase",
+    message: "back to the inventory?",
+    default: true
+
+  }]).then(function (user) {
+    if (user.purchase === true) {
+      displayMerch();
     } else {
       console.log("Thank you! Come back soon!");
       connection.end();
@@ -97,8 +116,8 @@ function purchasePrompt() {
           wantToBuy();
 
         } else {
-          console.log("\n\nAwesome! We can fulfull your order.");
-          console.log("You've selected: "
+          console.log("\n\nAwesome!");
+          console.log("\nYou've selected: "
             + res[i].product_name);
           console.log("Department: " + res[i].department_name);
           console.log("Price: " + res[i].price);
@@ -116,7 +135,7 @@ function purchasePrompt() {
             item_id: purchaseId
           }]
           )
-          displayMerch();
+          another();
         };
       }
     })
