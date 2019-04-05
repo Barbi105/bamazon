@@ -15,15 +15,15 @@ CREATE TABLE products (
 SELECT * FROM products;
 
 INSERT INTO products (product_name, department_name, price, stock_quantity)
-VALUES ("Laptop", "Electronics", 1000.00, 30),
-("Chair", "Furniture", 60.00, 50),
-("Earring", "Jewelry", 115.00, 15),
-("Shirt", "Clothing", 25.00, 100),
-("Speaker", "Electronics", 150.00, 25),
-("Lamp", "Furniture", 30.00, 200),
-("Skirt", "Clothing", 40.00, 80),
-("Necklace", "Jewelry", 200.00, 20),
-("Television", "Electronics", 650.00, 60),
-("Desk", "Furniture", 130.00, 35),
-("Ring", "Jewelry", 500.00, 10),
-("Sweater", "Clothing", 55.00, 40);
+VALUES ("Laptop", "Electronics", 1000.05, 30),
+("Chair", "Furniture", 60.99, 50),
+("Earring", "Jewelry", 115.20, 15),
+("Shirt", "Clothing", 25.03, 100),
+("Speaker", "Electronics", 150.10, 25),
+("Lamp", "Furniture", 30.60, 200),
+("Skirt", "Clothing", 40.15, 80),
+("Necklace", "Jewelry", 200.90, 20),
+("Television", "Electronics", 650.99, 60),
+("Desk", "Furniture", 130.70, 35),
+("Ring", "Jewelry", 500.40, 10),
+("Sweater", "Clothing", 55.40, 40);
